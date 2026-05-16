@@ -23,8 +23,6 @@
 - **Purpose:** Discover chatbot API endpoints, test data (Jana Reichert account), UI patterns
 - **Findings:**
   - 4 endpoints: `/api/chat`, `/api/state`, `/api/ui-event`, `/api/llm`
-  - Test account: €2,668.83 balance, Mastercard Debit 4821, IBAN DE89370400440532013000
-  - UI consistency issue: Card labeled "Meridian Debit" vs. API response "Mastercard Debit"
 - **Limitations:** Manual; no automated endpoint discovery
 
 ---
@@ -45,7 +43,3 @@
 1. **Copilot:** Generated code sometimes over-engineered; required simplification
 2. **Claude:** Non-determinism inherent to LLM; mitigated via threshold tuning + rule redundancy
 3. **DevTools:** Manual exploration prone to human error; captured screenshots for reference
-
----
-
-**Conclusion:** AI tools accelerated prototyping; human review ensured quality and production readiness.

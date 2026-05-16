@@ -1,103 +1,52 @@
-# Cypress E2E Tests — Meridian Banking Chatbot
+# Cypress E2E Tests
 
-UI automation tests for the Meridian Banking chatbot interface. Tests real user interactions with the browser.
-
----
+UI automation tests for the Meridian Banking chatbot interface.
 
 ## Quick Start
 
-### Install Dependencies
-
 ```bash
 npm install
-```
-
-### Open Cypress UI
-
-```bash
 npm run cypress:open
 ```
 
-### Run Headless
+For all commands, see [COMMON_COMMANDS.md](../docs/COMMON_COMMANDS.md).
 
-```bash
-npm run cypress:run
+## Directory Structure
+
 ```
-
-### Run Specific Tests
-
-```bash
-npm run cypress:account       # Account tests
-npm run cypress:security      # Security tests
-npm run cypress:transfer      # Transfer tests
-npm run cypress:performance   # Performance & conversational tests
+cypress/
+├── e2e/                  # Feature files (Gherkin/BDD)
+│   ├── account/
+│   ├── security/
+│   ├── transfer/
+│   └── ...
+│
+├── support/
+│   ├── step_definitions/ # Gherkin step implementations
+│   ├── pages/            # Page Object Model (ChatPage)
+│   ├── factories/        # Test data factories
+│   ├── commands.ts       # Custom Cypress commands
+│   └── e2e.ts           # Setup/hooks
+│
+└── screenshots/ & videos/ # Test artifacts
 ```
-
----
-
-## Test Files
-
-| File                  | Purpose              | Tests        |
-| --------------------- | -------------------- | ------------ |
-| **account.cy.ts**     | Account data queries | 5 scenarios  |
-| **security.cy.ts**    | Security guardrails  | 4 scenarios  |
-| **transfer.cy.ts**    | Transfer flows       | 3 scenarios  |
-| **performance.cy.ts** | Performance & UX     | 4+ scenarios |
-
----
 
 ## Custom Commands
 
-### cy.loginMeridian()
+All custom commands are in `support/commands.ts` and documented in [UI_ARCHITECTURE.md](../docs/UI_ARCHITECTURE.md):
 
-Login to Meridian with session token.
-
-```typescript
-cy.loginMeridian();
-```
-
-### cy.sendChatMessage(message)
-
-Type and send message.
-
-```typescript
-cy.sendChatMessage("What is my balance?");
-```
-
-### cy.getLastBotMessage()
-
-Get latest bot response.
-
-```typescript
-cy.getLastBotMessage().should("contain.text", "€");
-```
-
-### cy.verifyBotResponse(text)
-
-Verify response contains text.
-
-```typescript
-cy.verifyBotResponse("€2,668.83");
-```
-
-### cy.sendMessageViaAPI(message)
-
-Send message via API (not UI).
-
-```typescript
-cy.sendMessageViaAPI("What is my balance?").then((response) => {
-  expect(response.status).to.equal(200);
-});
-```
-
----
+- `cy.loginMeridian()` — Login with session token
+- `cy.sendChatMessage(text)` — Send message to bot
+- `cy.getLastBotMessage()` — Get latest bot response
+- `cy.verifyBotResponse(text)` — Verify response content
+- `cy.sendMessageViaAPI(message)` — Send via API
 
 ## Configuration
 
-**cypress.config.js:**
+Base URL: https://2ndround.sandb0x.run  
+Viewport: 1280x720  
+See `cypress.config.js` for full config.
 
-- Base URL: https://2ndround.sandb0x.run
-- Viewport: 1280x720
 - Timeout: 10 seconds
 - Videos: Enabled (on failure)
 - Screenshots: Enabled (on failure)

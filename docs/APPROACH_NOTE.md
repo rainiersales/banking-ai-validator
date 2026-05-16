@@ -36,17 +36,11 @@ Test automation for non-deterministic AI systems requires conscious trade-offs. 
 
 ## Scoring Approach
 
-### Rule-Based (13 Tests)
+**Rule-Based (13 Tests)** — 9 rule types with deterministic evaluation. Pass threshold: ≥75%.
 
-9 rule types (exact_match, contains, regex, latency, http_status, etc.) with weighted evaluation. Pass threshold: ≥75%.
+**LLM-as-Judge (2 Tests)** — Claude 3.5 Sonnet evaluates semantic quality on 0-5 scale. Pass threshold: ≥60%.
 
-**Rationale:** Deterministic evaluation for factual accuracy; fast execution; clear failure diagnostics.
-
-### LLM-as-Judge (2 Tests)
-
-Claude 3.5 Sonnet evaluates VARIANCE*001 and CONVERSATIONAL*\* on 0-5 scale. Pass threshold: ≥60%.
-
-**Rationale:** Semantic matching required for LLM variance; human-like judgment for quality metrics; independent verification of rule-based approach.
+For implementation details and all 9 rule types, see [SCORING_LOGIC.md](./SCORING_LOGIC.md).
 
 ## Consciously Descoped
 

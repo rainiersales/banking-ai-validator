@@ -119,45 +119,7 @@ npm run cypress:performance
 
 ---
 
-## 📂 Project Structure
-
-```
-meridian-banking-chatbot-harness/
-│
-├── 🔧 API Tests
-│   └── tests/harness/
-│       ├── harness.ts          # Orchestrator
-│       ├── scorer.ts           # Scoring engine
-│       ├── chat-client.ts      # HTTP client
-│       ├── test-cases.json     # Test definitions
-│       └── test-results/       # Generated reports
-│
-├── 🧪 UI Tests (NEW)
-│   ├── cypress/
-│   │   ├── e2e/
-│   │   │   ├── account.cy.ts        # Account tests
-│   │   │   ├── security.cy.ts       # Security tests
-│   │   │   ├── transfer.cy.ts       # Transfer tests
-│   │   │   └── performance.cy.ts    # Performance tests
-│   │   │
-│   │   └── support/
-│   │       ├── e2e.ts               # Setup
-│   │       └── commands.ts          # Custom commands
-│   │
-│   └── cypress.config.js        # Cypress config
-│
-├── 📖 Documentation
-│   ├── README.md
-│   ├── HYBRID_TESTING.md        # This file
-│   ├── APPROACH_NOTE.md
-│   ├── STRATEGY_NOTE.md
-│   └── ...
-│
-└── ⚙️ Configuration
-    ├── package.json
-    ├── tsconfig.json
-    └── cypress.config.js
-```
+For complete project structure, see [PROJECT_STRUCTURE.md](./PROJECT_STRUCTURE.md).
 
 ---
 

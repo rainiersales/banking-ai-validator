@@ -2,19 +2,20 @@
 
 ## Phase 1: Regression Protection (Baseline)
 
-**Timeline:** Week 1-2 | **Cost:** Low | **ROI:** Immediate
+**Timeline:** Month 1 (4 weeks) | **Cost:** Low | **ROI:** Immediate
 
 Current state. Validate core chatbot responses before deployment to production. 15 tests, hybrid scoring, daily CI/CD runs.
 
 - Run all tests on every commit/merge to main
 - Block deploys if pass rate < 90%
 - Slack notifications on failures
+- Establish monitoring baseline and alert thresholds
 
 ---
 
 ## Phase 2: Parametrized Variants & Load Testing
 
-**Timeline:** Week 3-4 | **Cost:** Medium | **ROI:** High (catch regressions earlier)
+**Timeline:** Month 2-3 (6-8 weeks) | **Cost:** Medium | **ROI:** High (catch regressions earlier)
 
 Expand test coverage via parametrization and parallel execution.
 
@@ -29,7 +30,7 @@ Expand test coverage via parametrization and parallel execution.
 
 ## Phase 3: Human Review Loop
 
-**Timeline:** Week 5-6 | **Cost:** Medium-High | **ROI:** Quality assurance
+**Timeline:** Month 4-5 (6-8 weeks) | **Cost:** Medium-High | **ROI:** Quality assurance
 
 Integrate human feedback into test validation.
 
@@ -44,7 +45,7 @@ Integrate human feedback into test validation.
 
 ## Phase 4: Telemetry & Analytics
 
-**Timeline:** Week 7-8 | **Cost:** Medium | **ROI:** Operational insights
+**Timeline:** Month 6-7 (6-8 weeks) | **Cost:** Medium | **ROI:** Operational insights
 
 Monitor chatbot behavior in production.
 
@@ -59,7 +60,7 @@ Monitor chatbot behavior in production.
 
 ## Phase 5: Advanced Pattern Detection
 
-**Timeline:** Week 9+ | **Cost:** High | **ROI:** Proactive issue detection
+**Timeline:** Month 8-10 (6-8 weeks) | **Cost:** High | **ROI:** Proactive issue detection
 
 Detect subtle behavioral drift before users report.
 
