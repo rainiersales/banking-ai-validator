@@ -1,0 +1,10 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+npx lint-staged
+
+# Auto-generate scenarios inventory if feature files or test-cases.json changed
+if git diff --cached --name-only | grep -E '\.feature$|test-cases\.json'; then
+  npm run docs:scenarios
+  git add SCENARIOS.md
+fi

@@ -1,0 +1,28 @@
+module.exports = {
+  features: ['cypress/e2e/**/*.feature'],
+  stepDefinitions: [
+    'cypress/support/step_definitions/**/*.ts',
+    'cypress/support/step_definitions/**/*.js'
+  ],
+  formatters: ['progress', 'json:test-results/cucumber-report.json'],
+  parallel: 2,
+  dryRun: false,
+  strict: false,
+  colorsEnabled: true,
+  colors: {
+    'feature keyword': ['magenta'],
+    'feature description': ['white'],
+    'scenario keyword': ['magenta'],
+    'scenario description': ['white'],
+    'step keyword': ['cyan'],
+    'step text': ['white'],
+    'step data table': ['white'],
+    'examples keyword': ['magenta'],
+    'examples table': ['white'],
+    'tag': ['yellow'],
+    'comment': ['grey'],
+    'output': ['white'],
+    'output step': ['cyan'],
+    'error': ['red']
+  }
+};

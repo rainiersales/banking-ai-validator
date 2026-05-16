@@ -1,0 +1,57 @@
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Build & Output
+dist/
+build/
+*.js.map
+*.d.ts.map
+
+# Test Results
+test-results/
+coverage/
+*.log
+npm-debug.log*
+yarn-debug.log*
+test_output.txt
+
+# Allure Report (local generation, not committed)
+allure-results/
+allure-report/
+
+# Cypress specific
+cypress/videos/
+cypress/screenshots/
+cypress/downloads/
+
+# Environment & Secrets
+.env
+.env.local
+.env.*.local
+cypress.env.json
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Internal Documentation (study notes, process logs)
+# Keep only interview-ready docs: README, APPROACH, STRATEGY, INTERVIEW_*, HYBRID_*, etc.
+ENTREVISTA_RESUMO.md
+GHERKIN_CYPRESS_CLOUD_DEMO.md
+GHERKIN_CLOUD_SETUP_COMPLETE.md
+QUICK_REFERENCE.md
+PORTUGUESE_TO_ENGLISH_CHANGES.md
+TRANSLATION_SUMMARY.md
+STACK_STATUS.md

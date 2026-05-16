@@ -1,0 +1,78 @@
+{
+	"name": "banking-ai-validator",
+	"version": "1.0.0",
+	"description": "Production-grade hybrid test framework for AI-powered banking chatbots",
+	"main": "tests/harness/harness.ts",
+	"scripts": {
+		"prepare": "husky install",
+		"harness": "cd tests/harness && npx ts-node harness.ts",
+		"harness:verbose": "cd tests/harness && npx ts-node harness.ts -- --verbose",
+		"harness:account": "cd tests/harness && npx ts-node harness.ts -- --filter ACCOUNT",
+		"harness:security": "cd tests/harness && npx ts-node harness.ts -- --filter SECURITY",
+		"harness:transfer": "cd tests/harness && npx ts-node harness.ts -- --filter TRANSFER",
+		"cypress:open": "cypress open",
+		"cypress:run": "cypress run",
+		"cypress:bdd": "cypress run --spec 'cypress/e2e/**/*.feature'",
+		"cypress:functional": "cypress run --spec 'cypress/e2e/functional/**'",
+		"cypress:security": "cypress run --spec 'cypress/e2e/security/**'",
+		"cypress:regression": "cypress run --spec 'cypress/e2e/regression/**'",
+		"cypress:performance": "cypress run --spec 'cypress/e2e/performance/**'",
+		"cypress:context": "cypress run --spec 'cypress/e2e/context/**'",
+		"cypress:conversational": "cypress run --spec 'cypress/e2e/conversational/**'",
+		"cypress:fallback": "cypress run --spec 'cypress/e2e/fallback/**'",
+		"cypress:moderation": "cypress run --spec 'cypress/e2e/moderation/**'",
+		"cypress:prompts": "cypress run --spec 'cypress/e2e/prompts/**'",
+		"cypress:ui": "cypress run --spec 'cypress/e2e/ui/**'",
+		"cypress:accessibility": "cypress run --spec 'cypress/e2e/usability/**'",
+		"cypress:compatibility": "cypress run --spec 'cypress/e2e/compatibility/**'",
+		"cypress:e2e": "cypress run --spec 'cypress/e2e/e2e/**'",
+		"test": "npm run harness && npm run cypress:run",
+		"convert:allure": "npx ts-node scripts/convert-to-allure.ts",
+		"report": "npm run convert:allure && allure generate tests/harness/allure-results -o allure-report --clean",
+		"report:open": "allure open allure-report",
+		"report:clean": "rm -rf tests/harness/allure-results allure-report",
+		"ci:test": "npm run harness && npm run report",
+		"lint": "biome lint .",
+		"lint:fix": "biome lint --fix .",
+		"format": "biome format --write .",
+		"docs:scenarios": "npx ts-node scripts/generate-scenarios.ts"
+	},
+	"keywords": [
+		"chatbot",
+		"testing",
+		"banking",
+		"qa",
+		"automation"
+	],
+	"author": "Test Automation Team",
+	"license": "MIT",
+	"dependencies": {
+		"@anthropic-ai/sdk": "^0.24.0"
+	},
+	"devDependencies": {
+		"@badeball/cypress-cucumber-preprocessor": "^24.0.1",
+		"@bahmutov/cypress-esbuild-preprocessor": "^2.2.8",
+		"@biomejs/biome": "^2.4.15",
+		"@cypress/webpack-dev-server": "^5.6.1",
+		"@types/node": "^20.0.0",
+		"allure-commandline": "^2.41.0",
+		"cypress": "^15.15.0",
+		"esbuild": "^0.28.0",
+		"husky": "^9.1.7",
+		"lint-staged": "^17.0.4",
+		"ts-node": "^10.9.0",
+		"typescript": "^6.0.3"
+	},
+	"engines": {
+		"node": ">=16.0.0"
+	},
+	"lint-staged": {
+		"*.ts": [
+			"biome lint --fix",
+			"biome format --write"
+		],
+		"*.json": [
+			"biome format --write"
+		]
+	}
+}

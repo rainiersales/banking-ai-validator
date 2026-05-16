@@ -1,0 +1,21 @@
+{
+	"name": "meridian-chatbot-harness",
+	"version": "1.0.0",
+	"description": "Test harness for Meridian Banking AI chatbot",
+	"private": true,
+	"scripts": {
+		"harness": "ts-node harness.ts",
+		"harness:verbose": "ts-node harness.ts --verbose",
+		"harness:account": "ts-node harness.ts --filter ACCOUNT",
+		"harness:security": "ts-node harness.ts --filter SECURITY",
+		"harness:transfer": "ts-node harness.ts --filter TRANSFER"
+	},
+	"dependencies": {
+		"@anthropic-ai/sdk": "^0.28.0"
+	},
+	"devDependencies": {
+		"@types/node": "^20.10.0",
+		"ts-node": "^10.9.1",
+		"typescript": "^5.3.2"
+	}
+}
